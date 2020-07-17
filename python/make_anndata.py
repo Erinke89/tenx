@@ -119,8 +119,8 @@ L.info( "Computing neighbors based on obsm: " + str(obsm_use))
 #             full_speed=args.full-speed)
 
 if args.method == "scanpy":
-    from scanpy.pp import neighbors
-    neighbors(adata,
+    import scanpy as sc
+    sc.pp.neighbors(adata,
               n_neighbors = args.k,
               metric = args.metric,
               use_rep = obsm_use)
