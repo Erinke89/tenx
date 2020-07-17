@@ -1351,7 +1351,7 @@ RDIMS_VIS_COMP_2 = "UMAP_2"
 # ########################################################################### #
 
 @active_if(PARAMS["run_velocity"])
-@follows(paga)
+@follows(paga, phate)
 @transform(RDIMS_VIS_TASK,
            regex(r"(.*)/(.*)/(.*).sentinel"),
            r"\1/velocity.dir/scvelo.sentinel")
