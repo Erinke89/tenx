@@ -1007,7 +1007,7 @@ def cluster(infile, outfile):
     spec, SPEC = TASK.get_vars(infile, outfile, PARAMS)
 
     job_threads, job_memory, r_memory = TASK.get_resources(
-        memory=PARAMS["resources_memory_low"])
+        memory=PARAMS["resources_memory_standard"])
 
     scanpy_cluster_tsv = infile.replace(".sentinel",".tsv.gz")
 
@@ -2067,7 +2067,7 @@ def findMarkers(infile, outfile):
 
     # set the job threads and memory
     job_threads, job_memory, r_memory = TASK.get_resources(
-        memory=PARAMS["resources_memory_standard"],
+        memory=PARAMS["resources_memory_high"],
         cpu=PARAMS["findmarkers_numcores"])
 
     for i in spec.clusters:
@@ -2191,7 +2191,7 @@ def summariseMarkers(infile, outfile):
 
     # set the job threads and memory
     job_threads, job_memory, r_memory = TASK.get_resources(
-        memory=PARAMS["resources_memory_standard"],
+        memory=PARAMS["resources_memory_high"],
         cpu=1)
 
     # make sumamary tables and plots of the differentially expressed genes
